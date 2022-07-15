@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+
+<body bgcolor="green">
+    <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name='ism' placeholder="Ismingiz"><br><br>
+        <input type="text" name='fam' placeholder="Familyangiz"><br><br>
+        <input type="text" name='username' placeholder="username"><br><br>
+        <p>{%for i in messages%}
+            {{i}}
+            {%endfor%}</p>
+        <input type="email" name='email' placeholder="Email"><br><br>
+        <p>{%for i in messages%}
+            {{i}}
+            {%endfor%}</p>
+        <input type="password" name='pas1' placeholder="Parol"><br><br>
+        <input type="password" name='pas2' placeholder="Parolni qayta kiriting"><br><br><br><br>
+        <input type="submit">
+
+    </form>
+
+    <div>
+        <h1>
+            {%for i in messages%}
+            {{i}}
+            {%endfor%}
+        </h1>
+    </div>
+</body>
+
+</html>
